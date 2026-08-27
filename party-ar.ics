@@ -1,0 +1,16 @@
+BEGIN:VCALENDAR
+VERSION:2.0
+PRODID:-//Ansgar and Yasser//Birthday Bash//AR
+CALSCALE:GREGORIAN
+METHOD:PUBLISH
+BEGIN:VEVENT
+UID:ansgar-yasser-birthday-bash-2027@party-invite
+DTSTAMP:20260824T120000Z
+DTSTART:20270313T180000Z
+DTEND:20270314T000000Z
+SUMMARY:حفلة عيد ميلاد أنسغار وياسر المشتركة
+DESCRIPTION:عيد ميلاد أنسغار الأربعون (للسنة السادسة على التوالي) وعيد ميلاد ياسر السابع والعشرون (الذكرى الثالثة عشرة)! من فضلكم بلا هدايا، أكبر هدية هي احتفالكم معنا. إذا كنتم مصرّين على الإنفاق فستكون هناك صندوق تبرعات لتغطية تكاليف الحفلة وللتبرع لـ Flüchtlingsrat Bremen و Sea-Watch e.V. قواعد اللباس: إطلالات ذات طابع خاص\, أو ببساطة أفرول!
+LOCATION:Flux\, Teerhof 20D\, 28199 Bremen-Neustadt
+URL:https://maps.app.goo.gl/wLFthMVjoVST4jvD7
+END:VEVENT
+END:VCALENDAR

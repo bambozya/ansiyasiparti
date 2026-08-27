@@ -1,0 +1,16 @@
+BEGIN:VCALENDAR
+VERSION:2.0
+PRODID:-//Ansgar und Yasser//Geburtstagsparty//DE
+CALSCALE:GREGORIAN
+METHOD:PUBLISH
+BEGIN:VEVENT
+UID:ansgar-yasser-birthday-bash-2027@party-invite
+DTSTAMP:20260824T120000Z
+DTSTART:20270313T180000Z
+DTEND:20270314T000000Z
+SUMMARY:Ansgars & Yassers Tandem-Geburtstagsparty
+DESCRIPTION:Ansgars 40. Geburtstag (zum 6. Mal in Folge) und Yassers 27. Geburtstag (13. Jubiläum)! Bitte keine Geschenke\, das größte Geschenk ist gemeinsames Feiern. Wer trotzdem Geld ausgeben möchte: Es gibt eine Spendenbox für die Partykosten\, Flüchtlingsrat Bremen und Sea-Watch e.V. Kleiderordnung: Modestatements -- zeigt\, wer ihr seid\, oder kommt einfach in Latzhose!
+LOCATION:Flux\, Teerhof 20D\, 28199 Bremen-Neustadt
+URL:https://maps.app.goo.gl/wLFthMVjoVST4jvD7
+END:VEVENT
+END:VCALENDAR

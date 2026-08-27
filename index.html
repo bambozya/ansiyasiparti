@@ -1,0 +1,159 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>party.exe &mdash; Ansgar &amp; Yasser's Tandem Birthday Bash</title>
+<link rel="stylesheet" href="party95.css">
+</head>
+<body>
+
+<button type="button" class="desktop-icon desktop-icon-btn icon-party" id="confettiPartyBtn">
+  <span class="glyph" aria-hidden="true">🎉</span>Confetti
+</button>
+<div class="desktop-icon desktop-icon-btn icon-email" id="confettiHeartBtn">
+  <a class="glyph" href="mailto:bambozya+party@gmail.com?subject=RSVP%3A%20Ansgar%20%26%20Yasser%27s%20Birthday%20Bash">📧</a>Email
+</div>
+
+<div class="window raised">
+
+  <header>
+    <div class="title-bar">
+      <span>🎉 party.exe &mdash; Ansgar &amp; Yasser's Birthday Bash</span>
+      <div class="title-bar-buttons" aria-hidden="true">
+        <span>_</span><span>&#9633;</span><span>&times;</span>
+      </div>
+    </div>
+
+    <div class="menu-bar" aria-hidden="true">
+      <span><span>F</span>ile</span>
+      <span><span>E</span>dit</span>
+      <span><span>V</span>iew</span>
+      <span><span>P</span>arty</span>
+      <span><span>H</span>elp</span>
+    </div>
+
+    <nav class="lang-switch" aria-label="Language">
+      <span class="lang-switch-label">🌐 Language:</span>
+      <span class="lang-btn sunken current" aria-current="page">🇬🇧 EN</span>
+      <a class="lang-btn raised" href="index-de.html">🇩🇪 DE</a>
+      <a class="lang-btn raised" href="index-ar.html">🇸🇦 AR</a>
+    </nav>
+
+    <div class="window-body" style="padding-bottom:0;">
+      <div class="ticker-box sunken">
+        <div class="ticker-viewport">
+          <div class="ticker-track" id="tickerTrack" aria-hidden="true">
+            <span>&gt; YOU ARE CORDIALLY SUMMONED TO THE PARTY OF THE YEAR &nbsp;&nbsp;&nbsp; &gt; RSVP TO ANSGAR OR YASSER &nbsp;&nbsp;&nbsp; &gt; THIS PAGE BEST VIEWED WHILE EXCITED_</span>
+            <span>&gt; YOU ARE CORDIALLY SUMMONED TO THE PARTY OF THE YEAR &nbsp;&nbsp;&nbsp; &gt; RSVP TO ANSGAR OR YASSER &nbsp;&nbsp;&nbsp; &gt; THIS PAGE BEST VIEWED WHILE EXCITED_</span>
+          </div>
+        </div>
+        <button type="button" class="win95-btn raised" id="tickerToggle" aria-pressed="false" data-pause="⏸ Pause" data-play="▶ Play">▶ Play</button>
+      </div>
+    </div>
+  </header>
+
+  <main id="main-content">
+    <div class="window-body" style="padding-top:0;">
+
+      <div class="message-box sunken">
+        <div class="message-icon raised" aria-hidden="true">🎂</div>
+        <div>
+          <h1>
+            Ansgar is celebrating his 40th birthday for the <strong>SIXTH</strong> year in a row,
+            and Yasser is marking the 13th anniversary of his 27th birthday!
+          </h1>
+          <h2 class="subtitle">A TANDEM BIRTHDAY BASH</h2>
+        </div>
+      </div>
+
+      <div class="viewer sunken">
+        <div class="viewer-toolbar">
+          <span>🖼️ photo_viewer.exe &mdash; animation.gif</span>
+          <button type="button" class="win95-btn raised" id="photoToggle" aria-pressed="false" data-pause="⏸ Pause" data-play="▶ Play">▶ Play</button>
+        </div>
+        <div class="viewer-body">
+          <img id="photoGif" src="animation.gif" alt="Ansgar and Yasser holding hands while trail running">
+          <canvas id="photoCanvas" aria-hidden="true"></canvas>
+        </div>
+        <div class="photo-caption">// the birthday duo, mid-adventure as usual //</div>
+      </div>
+
+      <div class="details-heading">Party Details:</div>
+      <table class="details sunken">
+        <caption class="sr-only">Location, date and time, gift policy, dress code, and music for the birthday party</caption>
+        <tr>
+          <th scope="row" class="label">📍 Location</th>
+          <td>
+            <strong>Flux</strong><br>
+            Teerhof 20D<br>
+            28199 Bremen-Neustadt<br>
+            <a href="https://maps.app.goo.gl/wLFthMVjoVST4jvD7">🗺️ View on Google Maps</a>
+          </td>
+        </tr>
+        <tr>
+          <th scope="row" class="label">🕖 Date &amp; Time</th>
+          <td>
+            <strong>Saturday, 13th March 2027</strong><br>
+            7:00 PM &mdash; 1:00 AM<br>
+            <a href="party-en.ics">📅 Add to Calendar</a>
+          </td>
+        </tr>
+        <tr>
+          <th scope="row" class="label">🎁 Gifts</th>
+          <td>
+            <span class="blink"><strong>PLEASE, NO GIFTS!</strong></span><br>
+            The biggest gift is celebrating with you. 💝
+            <div class="donation-note">
+              If you simply must spend money, there'll be a donation box at the party &mdash;
+              partly to help cover the costs of the night, and partly to donate to
+              <strong>Flüchtlingsrat Bremen</strong> and <strong>Sea-Watch e.V.</strong>
+            </div>
+          </td>
+        </tr>
+        <tr>
+          <th scope="row" class="label">👗 Dress Code</th>
+          <td>
+            <strong>FASHION STATEMENTS!</strong> Be free in your choices ;)<br>
+            Something hinting at your hobby, your culture, your interests, or just
+            something you love but haven't had the chance to wear often &mdash;
+            or just dungarees!<br>
+            <em>Guaranteed icebreaker material.</em>
+          </td>
+        </tr>
+        <tr>
+          <th scope="row" class="label">🎵 Music</th>
+          <td>
+            We'll be listening to music &mdash; weird music, experimental music, good music, epic songs &mdash;
+            and there's a risk you might have to sing along. 🎤
+          </td>
+        </tr>
+      </table>
+
+      <div class="rsvp-wrap">
+        <a class="rsvp-btn" href="mailto:bambozya+party@gmail.com?subject=RSVP%3A%20Ansgar%20%26%20Yasser%27s%20Birthday%20Bash">📧 RSVP to Ansgar or Yasser</a>
+      </div>
+
+    </div>
+  </main>
+
+  <footer>
+    <div class="status-bar sunken" style="background:#c0c0c0;">
+      <span class="grow">Status: Awaiting your RSVP&hellip;</span>
+      <span>Zoom: 100%</span>
+      <span>😊</span>
+    </div>
+  </footer>
+
+</div>
+
+<div class="taskbar">
+  <div class="start-btn" aria-hidden="true">🪟 Start</div>
+  <div class="task-btn raised" aria-hidden="true">🎉 party.exe &ndash; Birthday Bash</div>
+  <div class="clock" aria-hidden="true">13.03.2027 &nbsp; 19:00</div>
+</div>
+
+<script src="party95.js"></script>
+
+</body>
+</html>

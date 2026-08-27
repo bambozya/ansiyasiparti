@@ -1,0 +1,16 @@
+BEGIN:VCALENDAR
+VERSION:2.0
+PRODID:-//Ansgar and Yasser//Birthday Bash//EN
+CALSCALE:GREGORIAN
+METHOD:PUBLISH
+BEGIN:VEVENT
+UID:ansgar-yasser-birthday-bash-2027@party-invite
+DTSTAMP:20260824T120000Z
+DTSTART:20270313T180000Z
+DTEND:20270314T000000Z
+SUMMARY:Ansgar & Yasser's Tandem Birthday Bash
+DESCRIPTION:Ansgar's 40th birthday (6th year running) and Yasser's 27th birthday (13th anniversary)! No gifts\, please -- the biggest gift is celebrating together. If you must spend money\, there'll be a donation box for party costs\, Flüchtlingsrat Bremen\, and Sea-Watch e.V. Dress code: fashion statements -- wear something that says who you are\, or just dungarees!
+LOCATION:Flux\, Teerhof 20D\, 28199 Bremen-Neustadt
+URL:https://maps.app.goo.gl/wLFthMVjoVST4jvD7
+END:VEVENT
+END:VCALENDAR
