@@ -3,7 +3,7 @@
 }
 
 html, body {
-  height: 100%;
+  min-height: 100%;
 }
 
 body {
@@ -16,7 +16,7 @@ body {
   background-repeat: repeat;
   background-size: cover;
   min-height: 100vh;
-  height: 100%;
+  min-height: 100dvh;
   display: flex;
   flex-direction: column;
 }
@@ -53,10 +53,11 @@ a:visited {
   display: block;
 }
 
-.icon-party { top: 10px; left: 10px; }
-.icon-email { top: 10px; left: 80px; }
-[dir="rtl"] .icon-party { left: auto; right: 10px; }
-[dir="rtl"] .icon-email { left: auto; right: 80px; }
+.icon-email { top: 10px; left: 10px; }
+.icon-mines { top: 10px; left: 80px; }
+.icon-radio { top: 10px; left: 150px; }
+.icon-drummer { top: 10px; left: 220px; }
+.icon-punk { top: 10px; left: 290px; }
 
 .desktop-icon-btn {
   background: none;
@@ -69,45 +70,6 @@ a:visited {
 .desktop-icon-btn:focus-visible {
   outline: 2px dashed #fff;
   outline-offset: 2px;
-}
-
-/* ---- confetti ---- */
-.confetti-piece,
-.confetti-heart {
-  position: fixed;
-  top: 0;
-  left: 0;
-  pointer-events: none;
-  z-index: 999;
-  animation: confetti-fly 3s ease-in forwards;
-}
-.confetti-piece {
-  width: 8px;
-  height: 14px;
-}
-.confetti-heart {
-  font-size: 18px;
-  line-height: 1;
-}
-@keyframes confetti-fly {
-  0% {
-    transform: translate(0, 0) rotate(0deg);
-    opacity: 1;
-  }
-  100% {
-    transform: translate(var(--dx), var(--dy)) rotate(var(--rot));
-    opacity: 0;
-  }
-}
-@media (prefers-reduced-motion: reduce) {
-  .confetti-piece,
-  .confetti-heart {
-    animation: confetti-fade 0.4s ease-out forwards;
-  }
-}
-@keyframes confetti-fade {
-  from { opacity: 1; }
-  to   { opacity: 0; }
 }
 
 /* ---- bevel utilities ----
@@ -156,7 +118,8 @@ a:visited {
   width: 17px;
   height: 15px;
   background: #c0c0c0;
-  color: #000;
+  color: #808080;
+  text-shadow: 1px 1px 0 #fff;
   font-size: 10px;
   font-weight: bold;
   display: flex;
@@ -166,6 +129,7 @@ a:visited {
   border-left: 1px solid #fff;
   border-right: 1px solid #404040;
   border-bottom: 1px solid #404040;
+  cursor: default;
 }
 
 .menu-bar {
@@ -176,36 +140,13 @@ a:visited {
   gap: 16px;
   font-size: 12px;
 }
+.menu-bar > span {
+  color: #808080;
+  text-shadow: 1px 1px 0 #ffffff;
+  cursor: default;
+}
 .menu-bar span span {
   text-decoration: underline;
-}
-
-/* ---- language switch toolbar ---- */
-.lang-switch {
-  background: #c0c0c0;
-  border-bottom: 1px solid #808080;
-  padding: 4px 8px;
-  display: flex;
-  align-items: center;
-  gap: 8px;
-  font-size: 11px;
-}
-.lang-switch .lang-switch-label {
-  font-weight: bold;
-  margin-inline-end: 2px;
-}
-.lang-btn {
-  display: inline-block;
-  background: #c0c0c0;
-  color: #000;
-  font-weight: bold;
-  font-size: 11px;
-  padding: 3px 9px;
-  text-decoration: none;
-}
-.lang-btn.current {
-  color: #000;
-  cursor: default;
 }
 
 .window-body {
@@ -224,9 +165,11 @@ a:visited {
 .ticker-viewport {
   flex: 1;
   overflow: hidden;
+  direction: ltr;
 }
 .ticker-track {
   display: inline-flex;
+  direction: ltr;
   white-space: nowrap;
   color: #33ff33;
   font-family: "Courier New", Courier, monospace;
@@ -242,7 +185,11 @@ a:visited {
 }
 
 [dir="rtl"] .ticker-track {
-  animation-direction: reverse;
+  animation-name: ticker-scroll-rtl;
+}
+@keyframes ticker-scroll-rtl {
+  from { transform: translateX(-50%); }
+  to   { transform: translateX(0); }
 }
 .win95-btn {
   flex-shrink: 0;
@@ -251,6 +198,8 @@ a:visited {
   font-family: Tahoma, Verdana, sans-serif;
   font-weight: bold;
   font-size: 11px;
+  width: 100px;
+  height: 30px;
   padding: 4px 10px;
   cursor: pointer;
 }
@@ -417,8 +366,201 @@ table.details th.label {
   flex: 1;
 }
 
-/* ---- taskbar ---- */
+/* ---- radio player ---- */
+.radio-player {
+  position: fixed;
+  z-index: 950;
+  top: 90px;
+  right: 16px;
+  width: 260px;
+  max-width: calc(100vw - 32px);
+}
+[dir="rtl"] .radio-player {
+  right: auto;
+  left: 16px;
+}
+.drummer-player {
+  top: 260px;
+}
+.punk-player {
+  top: 430px;
+}
+.radio-player[hidden] {
+  display: none;
+}
+.radio-player .title-bar {
+  cursor: move;
+  touch-action: none;
+  user-select: none;
+}
+.title-bar-btn {
+  width: 17px;
+  height: 15px;
+  background: #c0c0c0;
+  color: #000;
+  font-family: inherit;
+  font-size: 10px;
+  font-weight: bold;
+  padding: 0;
+  cursor: pointer;
+  border-top: 1px solid #fff;
+  border-left: 1px solid #fff;
+  border-right: 1px solid #404040;
+  border-bottom: 1px solid #404040;
+}
+.title-bar-btn:active {
+  border-top: 1px solid #404040;
+  border-left: 1px solid #404040;
+  border-right: 1px solid #fff;
+  border-bottom: 1px solid #fff;
+}
+.radio-player-body {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  padding: 12px;
+}
+.radio-now-playing {
+  background: #000;
+  color: #33ff33;
+  font-family: "Courier New", Courier, monospace;
+  font-size: 11px;
+  padding: 8px;
+  min-height: 32px;
+  overflow: hidden;
+  white-space: nowrap;
+  text-overflow: ellipsis;
+}
+.radio-controls {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 8px;
+}
+.radio-controls .win95-btn {
+  width: auto;
+  flex-shrink: 0;
+}
+.radio-source-link {
+  font-size: 11px;
+}
+
+/* ---- minesweeper ---- */
+.minesweeper-window {
+  position: fixed;
+  z-index: 950;
+  top: 90px;
+  left: 16px;
+  width: 250px;
+  max-width: calc(100vw - 32px);
+}
+[dir="rtl"] .minesweeper-window {
+  left: auto;
+  right: 16px;
+}
+.minesweeper-window[hidden] {
+  display: none;
+}
+.minesweeper-window .title-bar {
+  cursor: move;
+  touch-action: none;
+  user-select: none;
+}
+.minesweeper-body {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+  padding: 10px;
+  align-items: center;
+}
+.minesweeper-toolbar {
+  width: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 4px 6px;
+}
+.minesweeper-counter {
+  background: #000;
+  color: #ff0000;
+  font-family: "Courier New", Courier, monospace;
+  font-weight: bold;
+  font-size: 16px;
+  letter-spacing: 2px;
+  padding: 2px 6px;
+  min-width: 38px;
+  text-align: center;
+}
+.minesweeper-face {
+  width: 26px;
+  height: 26px;
+  font-size: 15px;
+  line-height: 1;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: #c0c0c0;
+  cursor: pointer;
+  padding: 0;
+}
+.minesweeper-face:active {
+  border-top: 2px solid #404040;
+  border-left: 2px solid #404040;
+  border-right: 2px solid #ffffff;
+  border-bottom: 2px solid #ffffff;
+  box-shadow: inset 1px 1px 0 #808080, inset -1px -1px 0 #dfdfdf;
+}
+.minesweeper-grid {
+  display: grid;
+  grid-template-columns: repeat(9, 24px);
+  grid-template-rows: repeat(9, 24px);
+  background: #808080;
+}
+.ms-cell {
+  width: 24px;
+  height: 24px;
+  padding: 0;
+  margin: 0;
+  font-size: 13px;
+  font-weight: bold;
+  font-family: Tahoma, Verdana, sans-serif;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  background: #c0c0c0;
+  border-top: 2px solid #ffffff;
+  border-left: 2px solid #ffffff;
+  border-right: 2px solid #404040;
+  border-bottom: 2px solid #404040;
+  touch-action: none;
+  -webkit-touch-callout: none;
+  -webkit-user-select: none;
+  user-select: none;
+}
+.ms-cell.revealed {
+  cursor: default;
+  border: 1px solid #808080;
+  box-shadow: none;
+}
+.ms-cell.revealed.mine {
+  background: #ff0000;
+}
+.ms-cell[data-n="1"] { color: #0000ff; }
+.ms-cell[data-n="2"] { color: #008000; }
+.ms-cell[data-n="3"] { color: #ff0000; }
+.ms-cell[data-n="4"] { color: #000080; }
+.ms-cell[data-n="5"] { color: #800000; }
+.ms-cell[data-n="6"] { color: #008080; }
+.ms-cell[data-n="7"] { color: #000000; }
+.ms-cell[data-n="8"] { color: #808080; }
+
+/* ---- taskbar ----
+   Kept as a fixed, direction-independent strip (like a real OS taskbar)
+   so the Start button, language tabs, and clock stay in the same
+   physical order no matter which language page is showing. */
 .taskbar {
+  direction: ltr;
   margin-top: auto;
   background: #c0c0c0;
   border-top: 2px solid #ffffff;
@@ -434,27 +576,49 @@ table.details th.label {
   font-weight: bold;
   font-size: 12px;
   padding: 4px 10px;
+  width: 76px;
+  flex-shrink: 0;
+  text-align: center;
+  white-space: nowrap;
   border-top: 2px solid #ffffff;
   border-left: 2px solid #ffffff;
   border-right: 2px solid #404040;
   border-bottom: 2px solid #404040;
 }
-.task-btn {
-  background: #d4d0c8;
-  font-size: 12px;
-  padding: 4px 10px;
-  border-top: 2px solid #404040;
-  border-left: 2px solid #404040;
-  border-right: 2px solid #ffffff;
-  border-bottom: 2px solid #ffffff;
+.taskbar-langs {
+  display: flex;
   flex: 1;
-  max-width: 320px;
+  min-width: 0;
+  gap: 6px;
+}
+.task-btn {
+  display: block;
+  background: #c0c0c0;
+  color: #000;
+  font-size: 12px;
+  font-weight: normal;
+  text-decoration: none;
+  padding: 4px 10px;
+  flex: 1;
+  min-width: 0;
+  max-width: 200px;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  cursor: pointer;
+}
+.task-btn.sunken {
+  background: #d4d0c8;
+  font-weight: bold;
+  cursor: default;
 }
 .clock {
   margin-inline-start: auto;
   background: #c0c0c0;
   font-size: 12px;
-  padding: 4px 10px;
+  padding: 4px 6px;
+  white-space: nowrap;
+  flex-shrink: 0;
   border-top: 1px solid #404040;
   border-left: 1px solid #404040;
   border-right: 1px solid #ffffff;

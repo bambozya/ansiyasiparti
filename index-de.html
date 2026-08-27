@@ -3,17 +3,27 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="robots" content="noindex, nofollow">
 <title>party.exe &mdash; Ansgars &amp; Yassers Tandem-Geburtstagsparty</title>
 <link rel="stylesheet" href="party95.css">
 </head>
 <body>
 
-<button type="button" class="desktop-icon desktop-icon-btn icon-party" id="confettiPartyBtn">
-  <span class="glyph" aria-hidden="true">🎉</span>Konfetti
-</button>
-<div class="desktop-icon desktop-icon-btn icon-email" id="confettiHeartBtn">
+<div class="desktop-icon desktop-icon-btn icon-email">
   <a class="glyph" href="mailto:bambozya+party@gmail.com?subject=Zusage%3A%20Ansgars%20%26%20Yassers%20Geburtstagsparty">📧</a>E-Mail
 </div>
+<button type="button" class="desktop-icon desktop-icon-btn icon-radio" id="radioBtn" aria-haspopup="dialog" aria-expanded="false" aria-controls="radioPlayer">
+  <span class="glyph" aria-hidden="true">📻</span>Radio
+</button>
+<button type="button" class="desktop-icon desktop-icon-btn icon-mines" id="minesweeperBtn" aria-haspopup="dialog" aria-expanded="false" aria-controls="minesweeperWindow">
+  <span class="glyph" aria-hidden="true">💣</span>Minesweeper
+</button>
+<button type="button" class="desktop-icon desktop-icon-btn icon-drummer" id="drummerBtn" aria-haspopup="dialog" aria-expanded="false" aria-controls="drummerPlayer">
+  <span class="glyph" aria-hidden="true">🥁</span>Drummer
+</button>
+<button type="button" class="desktop-icon desktop-icon-btn icon-punk" id="punkBtn" aria-haspopup="dialog" aria-expanded="false" aria-controls="punkPlayer">
+  <span class="glyph" aria-hidden="true">🤘</span>Punk
+</button>
 
 <div class="window raised">
 
@@ -32,13 +42,6 @@
       <span><span>P</span>arty</span>
       <span><span>H</span>ilfe</span>
     </div>
-
-    <nav class="lang-switch" aria-label="Sprache">
-      <span class="lang-switch-label">🌐 Sprache:</span>
-      <a class="lang-btn raised" href="index.html">🇬🇧 EN</a>
-      <span class="lang-btn sunken current" aria-current="page">🇩🇪 DE</span>
-      <a class="lang-btn raised" href="index-ar.html">🇸🇦 AR</a>
-    </nav>
 
     <div class="window-body" style="padding-bottom:0;">
       <div class="ticker-box sunken">
@@ -84,7 +87,7 @@
         <caption class="sr-only">Ort, Datum und Uhrzeit, Geschenkregelung, Kleiderordnung und Musik für die Geburtstagsparty</caption>
         <tr>
           <th scope="row" class="label">📍 Ort</th>
-          <td>
+          <td width="100%">
             <strong>Flux</strong><br>
             Teerhof 20D<br>
             28199 Bremen-Neustadt<br>
@@ -92,7 +95,7 @@
           </td>
         </tr>
         <tr>
-          <th scope="row" class="label">🕖 Datum &amp; Uhrzeit</th>
+          <th scope="row" class="label">🕖 Datum<br> &amp; Uhrzeit</th>
           <td>
             <strong>Samstag, 13. März 2027</strong><br>
             19:00 &ndash; 1:00 Uhr<br>
@@ -112,6 +115,14 @@
           </td>
         </tr>
         <tr>
+          <th scope="row" class="label">🍹 Essen<br> &amp; Trinken</th>
+          <td>
+            Die Getränke übernehmen wir! 🍾<br>
+            Wenn ihr etwas mitbringen möchtet, freuen wir uns über
+            <strong>veganes Fingerfood</strong> oder <strong>veganen Kuchen</strong>. 🌱🎂
+          </td>
+        </tr>
+        <tr>
           <th scope="row" class="label">👗 Kleiderordnung</th>
           <td>
             <strong>MODESTATEMENTS!</strong> Seid frei in eurer Wahl ;)<br>
@@ -124,7 +135,7 @@
         <tr>
           <th scope="row" class="label">🎵 Musik</th>
           <td>
-            Es wird Musik geben &mdash; schräge Musik, experimentelle Musik, gute Musik, epische Songs &mdash;
+            Wir werden Musik spielen &mdash; schräge Musik, experimentelle Musik, gute Musik, epische Songs &mdash;
             und es besteht die Gefahr, dass ihr mitsingen müsst. 🎤
           </td>
         </tr>
@@ -149,8 +160,86 @@
 
 <div class="taskbar">
   <div class="start-btn" aria-hidden="true">🪟 Start</div>
-  <div class="task-btn raised" aria-hidden="true">🎉 party.exe &ndash; Geburtstagsparty</div>
+  <nav class="taskbar-langs" aria-label="Sprache">
+    <a class="task-btn raised" href="index.html">🇬🇧 party.exe &ndash; EN</a>
+    <span class="task-btn sunken current" aria-current="page">🇩🇪 party.exe &ndash; DE</span>
+    <a class="task-btn raised" href="index-ar.html">🇸🇦 party.exe &ndash; AR</a>
+  </nav>
   <div class="clock" aria-hidden="true">13.03.2027 &nbsp; 19:00</div>
+</div>
+
+<div class="window raised radio-player" id="radioPlayer" role="dialog" aria-label="Radio alHara Player" hidden>
+  <div class="title-bar">
+    <span>📻 radio_player.exe &mdash; Radio alHara</span>
+    <div class="title-bar-buttons">
+      <button type="button" class="title-bar-btn" id="radioCloseBtn" aria-label="Radio-Player schließen">&times;</button>
+    </div>
+  </div>
+  <div class="window-body radio-player-body">
+    <div class="radio-now-playing sunken" id="radioNowPlaying" data-live="Radio alHara &mdash; live aus Bethlehem" data-buffering="Wird geladen&hellip;" data-error="Verbindung zum Stream fehlgeschlagen.">Verbindung wird hergestellt&hellip;</div>
+    <div class="radio-controls">
+      <button type="button" class="win95-btn raised" id="radioPlayToggle" aria-pressed="false" data-pause="⏸ Pause" data-play="▶ Abspielen">▶ Abspielen</button>
+      <a class="radio-source-link" href="https://radioalhara.net/" target="_blank" rel="noopener noreferrer">🔗 radioalhara.net</a>
+    </div>
+    <audio id="radioAudio" preload="none">
+      <source src="https://stream.radioalhara.net/ra" type="audio/mpeg">
+    </audio>
+  </div>
+</div>
+
+<div class="window raised minesweeper-window" id="minesweeperWindow" role="dialog" aria-label="Minesweeper" hidden>
+  <div class="title-bar">
+    <span>💣 minesweeper.exe</span>
+    <div class="title-bar-buttons">
+      <button type="button" class="title-bar-btn" id="minesweeperCloseBtn" aria-label="Minesweeper schließen">&times;</button>
+    </div>
+  </div>
+  <div class="window-body minesweeper-body">
+    <div class="minesweeper-toolbar sunken">
+      <span class="minesweeper-counter" id="minesweeperMineCount">010</span>
+      <button type="button" class="minesweeper-face raised" id="minesweeperFace" aria-label="Neues Spiel starten">🙂</button>
+      <span class="minesweeper-counter" id="minesweeperTimer">000</span>
+    </div>
+    <div class="minesweeper-grid sunken" id="minesweeperGrid" role="grid" aria-label="Minesweeper-Feld"></div>
+  </div>
+</div>
+
+<div class="window raised radio-player drummer-player" id="drummerPlayer" role="dialog" aria-label="Give the Drummer Some Player" hidden>
+  <div class="title-bar">
+    <span>🥁 drummer_player.exe &mdash; Give the Drummer Some</span>
+    <div class="title-bar-buttons">
+      <button type="button" class="title-bar-btn" id="drummerCloseBtn" aria-label="Give the Drummer Some schließen">&times;</button>
+    </div>
+  </div>
+  <div class="window-body radio-player-body">
+    <div class="radio-now-playing sunken" id="drummerNowPlaying" data-live="Give the Drummer Some &mdash; live auf WFMU" data-buffering="Wird geladen&hellip;" data-error="Verbindung zum Stream fehlgeschlagen.">Verbindung wird hergestellt&hellip;</div>
+    <div class="radio-controls">
+      <button type="button" class="win95-btn raised" id="drummerPlayToggle" aria-pressed="false" data-pause="⏸ Pause" data-play="▶ Abspielen">▶ Abspielen</button>
+      <a class="radio-source-link" href="https://wfmu.org/" target="_blank" rel="noopener noreferrer">🔗 wfmu.org</a>
+    </div>
+    <audio id="drummerAudio" preload="none">
+      <source src="https://stream0.wfmu.org/drummer" type="audio/mpeg">
+    </audio>
+  </div>
+</div>
+
+<div class="window raised radio-player punk-player" id="punkPlayer" role="dialog" aria-label="Punkrockers Radio Player" hidden>
+  <div class="title-bar">
+    <span>🤘 punk_player.exe &mdash; Punkrockers Radio</span>
+    <div class="title-bar-buttons">
+      <button type="button" class="title-bar-btn" id="punkCloseBtn" aria-label="Punkrockers Radio schließen">&times;</button>
+    </div>
+  </div>
+  <div class="window-body radio-player-body">
+    <div class="radio-now-playing sunken" id="punkNowPlaying" data-live="Punkrockers Radio &mdash; 24/7 Punk live" data-buffering="Wird geladen&hellip;" data-error="Verbindung zum Stream fehlgeschlagen.">Verbindung wird hergestellt&hellip;</div>
+    <div class="radio-controls">
+      <button type="button" class="win95-btn raised" id="punkPlayToggle" aria-pressed="false" data-pause="⏸ Pause" data-play="▶ Abspielen">▶ Abspielen</button>
+      <a class="radio-source-link" href="https://punkrockers-radio.de" target="_blank" rel="noopener noreferrer">🔗 punkrockers-radio.de</a>
+    </div>
+    <audio id="punkAudio" preload="none">
+      <source src="http://stream.punkrockers-radio.de:8000/prr.mp3" type="audio/mpeg">
+    </audio>
+  </div>
 </div>
 
 <script src="party95.js"></script>
