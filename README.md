@@ -15,7 +15,7 @@ A Windows 95–themed birthday invite site for Ansgar & Yasser's tandem birthday
   - 💣 **Minesweeper** — a fully playable 9×9 game (flag with right-click on desktop, long-press on touch/mobile)
   - 📻 **Radio** — Radio alHara live stream with now-playing metadata
   - 🥁 **Drummer** — Give the Drummer Some (WFMU) live stream
-  - 🤘 **Punk** — Punkrockers Radio live stream
+  - 🤘 **Punk** — REAL PUNK RADIO live stream
 
 ## Files
 
