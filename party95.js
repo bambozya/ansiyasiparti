@@ -686,3 +686,14 @@
     });
   });
 })();
+
+(function () {
+  var btn = document.getElementById('rsvpIconBtn');
+  var target = document.getElementById('rsvpForm');
+  if (!btn || !target) return;
+
+  btn.addEventListener('click', function () {
+    var reduceMotion = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+    target.scrollIntoView({ behavior: reduceMotion ? 'auto' : 'smooth', block: 'start' });
+  });
+})();
