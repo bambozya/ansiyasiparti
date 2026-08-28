@@ -141,9 +141,30 @@
         </tr>
       </table>
 
-      <div class="rsvp-wrap">
-        <a class="rsvp-btn" href="mailto:bambozya+party@gmail.com?subject=%D8%AA%D8%A3%D9%83%D9%8A%D8%AF%20%D8%A7%D9%84%D8%AD%D8%B6%D9%88%D8%B1%3A%20%D8%AD%D9%81%D9%84%D8%A9%20%D8%B9%D9%8A%D8%AF%20%D9%85%D9%8A%D9%84%D8%A7%D8%AF%20%D8%A3%D9%86%D8%B3%D8%BA%D8%A7%D8%B1%20%D9%88%D9%8A%D8%A7%D8%B3%D8%B1">📧 أكدوا حضوركم لدى أنسغار أو ياسر</a>
-      </div>
+      <div class="details-heading">تأكيد الحضور:</div>
+      <form class="rsvp-form" id="rsvpForm" action="https://formspree.io/f/xgaeevay" method="POST">
+        <input type="text" name="_gotcha" style="display:none" tabindex="-1" autocomplete="off">
+        <input type="hidden" name="_subject" value="تأكيد حضور جديد — حفلة عيد ميلاد أنسغار وياسر">
+        <input type="hidden" name="language" value="العربية">
+        <label class="rsvp-field">
+          <span>الاسم</span>
+          <input type="text" name="name" class="sunken" required maxlength="100" autocomplete="name">
+        </label>
+        <fieldset class="rsvp-attending">
+          <legend>هل ستحضر؟</legend>
+          <label><input type="radio" name="attending" value="نعم، سأحضر!" required> نعم، سأحضر! 🎉</label>
+          <label><input type="radio" name="attending" value="للأسف، لن أتمكن من الحضور"> للأسف، لن أتمكن من الحضور</label>
+        </fieldset>
+        <label class="rsvp-field">
+          <span>تعليق (اختياري)</span>
+          <textarea name="comment" class="sunken" rows="3" maxlength="500"></textarea>
+        </label>
+        <div class="rsvp-submit-row">
+          <button type="submit" class="rsvp-btn" id="rsvpSubmit">📧 إرسال التأكيد</button>
+          <div class="rsvp-status" id="rsvpStatus" role="status" aria-live="polite" data-sending="جارٍ الإرسال&hellip;" data-success="شكرًا، تم استلام تأكيدكم! 🎉" data-error="حدث خطأ ما &mdash; يرجى مراسلتنا مباشرة بدلاً من ذلك."></div>
+        </div>
+      </form>
+      <div class="rsvp-fallback">تواجه مشكلة؟ راسلنا مباشرة على <a href="mailto:bambozya+party@gmail.com?subject=%D8%AA%D8%A3%D9%83%D9%8A%D8%AF%20%D8%A7%D9%84%D8%AD%D8%B6%D9%88%D8%B1%3A%20%D8%AD%D9%81%D9%84%D8%A9%20%D8%B9%D9%8A%D8%AF%20%D9%85%D9%8A%D9%84%D8%A7%D8%AF%20%D8%A3%D9%86%D8%B3%D8%BA%D8%A7%D8%B1%20%D9%88%D9%8A%D8%A7%D8%B3%D8%B1">bambozya+party@gmail.com</a></div>
 
     </div>
   </main>

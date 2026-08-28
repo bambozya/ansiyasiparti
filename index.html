@@ -141,9 +141,30 @@
         </tr>
       </table>
 
-      <div class="rsvp-wrap">
-        <a class="rsvp-btn" href="mailto:bambozya+party@gmail.com?subject=RSVP%3A%20Ansgar%20%26%20Yasser%27s%20Birthday%20Bash">📧 RSVP to Ansgar or Yasser</a>
-      </div>
+      <div class="details-heading">RSVP:</div>
+      <form class="rsvp-form" id="rsvpForm" action="https://formspree.io/f/xgaeevay" method="POST">
+        <input type="text" name="_gotcha" style="display:none" tabindex="-1" autocomplete="off">
+        <input type="hidden" name="_subject" value="New RSVP — Ansgar &amp; Yasser's Birthday Bash">
+        <input type="hidden" name="language" value="English">
+        <label class="rsvp-field">
+          <span>Name</span>
+          <input type="text" name="name" class="sunken" required maxlength="100" autocomplete="name">
+        </label>
+        <fieldset class="rsvp-attending">
+          <legend>Are you coming?</legend>
+          <label><input type="radio" name="attending" value="Yes, I'll be there!" required> Yes, I'll be there! 🎉</label>
+          <label><input type="radio" name="attending" value="Sadly, I can't make it"> Sadly, I can't make it</label>
+        </fieldset>
+        <label class="rsvp-field">
+          <span>Comment (optional)</span>
+          <textarea name="comment" class="sunken" rows="3" maxlength="500"></textarea>
+        </label>
+        <div class="rsvp-submit-row">
+          <button type="submit" class="rsvp-btn" id="rsvpSubmit">📧 Send RSVP</button>
+          <div class="rsvp-status" id="rsvpStatus" role="status" aria-live="polite" data-sending="Sending&hellip;" data-success="Thanks, RSVP received! 🎉" data-error="Something went wrong &mdash; please try emailing us instead."></div>
+        </div>
+      </form>
+      <div class="rsvp-fallback">Having trouble? Email us directly at <a href="mailto:bambozya+party@gmail.com?subject=RSVP%3A%20Ansgar%20%26%20Yasser%27s%20Birthday%20Bash">bambozya+party@gmail.com</a></div>
 
     </div>
   </main>

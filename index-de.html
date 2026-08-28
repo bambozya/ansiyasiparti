@@ -141,9 +141,30 @@
         </tr>
       </table>
 
-      <div class="rsvp-wrap">
-        <a class="rsvp-btn" href="mailto:bambozya+party@gmail.com?subject=Zusage%3A%20Ansgars%20%26%20Yassers%20Geburtstagsparty">📧 Sag Ansgar oder Yasser Bescheid</a>
-      </div>
+      <div class="details-heading">Zusage:</div>
+      <form class="rsvp-form" id="rsvpForm" action="https://formspree.io/f/xgaeevay" method="POST">
+        <input type="text" name="_gotcha" style="display:none" tabindex="-1" autocomplete="off">
+        <input type="hidden" name="_subject" value="Neue Zusage — Ansgars &amp; Yassers Geburtstagsparty">
+        <input type="hidden" name="language" value="Deutsch">
+        <label class="rsvp-field">
+          <span>Name</span>
+          <input type="text" name="name" class="sunken" required maxlength="100" autocomplete="name">
+        </label>
+        <fieldset class="rsvp-attending">
+          <legend>Kommst du?</legend>
+          <label><input type="radio" name="attending" value="Ja, ich bin dabei!" required> Ja, ich bin dabei! 🎉</label>
+          <label><input type="radio" name="attending" value="Leider kann ich nicht kommen"> Leider kann ich nicht kommen</label>
+        </fieldset>
+        <label class="rsvp-field">
+          <span>Kommentar (optional)</span>
+          <textarea name="comment" class="sunken" rows="3" maxlength="500"></textarea>
+        </label>
+        <div class="rsvp-submit-row">
+          <button type="submit" class="rsvp-btn" id="rsvpSubmit">📧 Zusage senden</button>
+          <div class="rsvp-status" id="rsvpStatus" role="status" aria-live="polite" data-sending="Wird gesendet&hellip;" data-success="Danke, deine Zusage ist angekommen! 🎉" data-error="Etwas ist schiefgelaufen &mdash; schreib uns bitte stattdessen eine E-Mail."></div>
+        </div>
+      </form>
+      <div class="rsvp-fallback">Probleme? Schreib uns direkt an <a href="mailto:bambozya+party@gmail.com?subject=Zusage%3A%20Ansgars%20%26%20Yassers%20Geburtstagsparty">bambozya+party@gmail.com</a></div>
 
     </div>
   </main>

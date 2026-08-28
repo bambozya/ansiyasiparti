@@ -341,12 +341,96 @@ table.details th.label {
   text-decoration: none;
   font-weight: bold;
   font-size: 13px;
+  font-family: inherit;
+  cursor: pointer;
   padding: 10px 28px;
   border-top: 2px solid #ffffff;
   border-left: 2px solid #ffffff;
   border-right: 2px solid #404040;
   border-bottom: 2px solid #404040;
   box-shadow: inset -1px -1px 0 #808080, inset 1px 1px 0 #dfdfdf;
+}
+.rsvp-btn:active {
+  border-top: 2px solid #404040;
+  border-left: 2px solid #404040;
+  border-right: 2px solid #ffffff;
+  border-bottom: 2px solid #ffffff;
+  box-shadow: inset 1px 1px 0 #808080, inset -1px -1px 0 #dfdfdf;
+}
+.rsvp-btn:disabled {
+  color: #808080;
+  cursor: default;
+}
+
+/* ---- RSVP form ---- */
+.rsvp-form {
+  background: #fff;
+  padding: 16px;
+  margin-bottom: 16px;
+  display: flex;
+  flex-direction: column;
+  gap: 14px;
+}
+.rsvp-field {
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+  font-size: 13px;
+}
+.rsvp-field > span {
+  font-weight: bold;
+}
+.rsvp-field input[type="text"],
+.rsvp-field textarea {
+  font-family: inherit;
+  font-size: 13px;
+  padding: 6px 8px;
+  border: none;
+  background: #fff;
+  resize: vertical;
+}
+.rsvp-attending {
+  border: none;
+  padding: 0;
+  margin: 0;
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+  font-size: 13px;
+}
+.rsvp-attending legend {
+  font-weight: bold;
+  padding: 0;
+  margin-bottom: 4px;
+}
+.rsvp-attending label {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  font-weight: normal;
+  cursor: pointer;
+}
+.rsvp-submit-row {
+  display: flex;
+  align-items: center;
+  gap: 14px;
+  flex-wrap: wrap;
+}
+.rsvp-status {
+  font-size: 12px;
+  font-weight: bold;
+  min-height: 16px;
+}
+.rsvp-status.success {
+  color: #006400;
+}
+.rsvp-status.error {
+  color: #cc0000;
+}
+.rsvp-fallback {
+  font-size: 12px;
+  text-align: center;
+  margin: -8px 0 16px;
 }
 
 .status-bar {

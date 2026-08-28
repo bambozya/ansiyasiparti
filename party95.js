@@ -652,3 +652,37 @@
     });
   }
 })();
+
+(function () {
+  var form = document.getElementById('rsvpForm');
+  var status = document.getElementById('rsvpStatus');
+  var submitBtn = document.getElementById('rsvpSubmit');
+  if (!form || !status || !submitBtn) return;
+
+  form.addEventListener('submit', function (e) {
+    e.preventDefault();
+    status.className = 'rsvp-status';
+    status.textContent = status.dataset.sending;
+    submitBtn.disabled = true;
+
+    fetch(form.action, {
+      method: 'POST',
+      body: new FormData(form),
+      headers: { 'Accept': 'application/json' }
+    }).then(function (response) {
+      if (response.ok) {
+        status.className = 'rsvp-status success';
+        status.textContent = status.dataset.success;
+        form.reset();
+      } else {
+        status.className = 'rsvp-status error';
+        status.textContent = status.dataset.error;
+      }
+    }).catch(function () {
+      status.className = 'rsvp-status error';
+      status.textContent = status.dataset.error;
+    }).finally(function () {
+      submitBtn.disabled = false;
+    });
+  });
+})();
