@@ -1,15 +1,4 @@
 (function () {
-  var backgrounds = ['bg1.jpg', 'bg2.jpg', 'bg3.jpg', 'bg4.jpg'];
-  var storageKey = 'party95-bg-index';
-  var index = 0;
-  try {
-    index = (parseInt(localStorage.getItem(storageKey), 10) || 0) % backgrounds.length;
-    localStorage.setItem(storageKey, String((index + 1) % backgrounds.length));
-  } catch (e) {}
-  document.body.style.backgroundImage = 'url("' + backgrounds[index] + '")';
-})();
-
-(function () {
   var track = document.getElementById('tickerTrack');
   var toggle = document.getElementById('tickerToggle');
 
